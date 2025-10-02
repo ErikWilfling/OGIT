@@ -27,6 +27,7 @@ ogit.Legal:LegalClause
 		ogit:createdAt
 		ogit:lastUpdatedAt
 		ogit:endedAt
+		ogit:startedAt
 		ogit:sharedWith
 		ogit:cleanContent
 	);
