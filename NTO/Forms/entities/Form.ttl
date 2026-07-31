@@ -33,6 +33,9 @@ ogit.Forms:Form
 		ogit:followers
 	);
 	ogit:indexed-attributes (
+		ogit:name
+		ogit:id
+		ogit:description
 	);
 	ogit:allowed (
 		[ ogit:references  ogit.Forms:Form ]

@@ -47,8 +47,12 @@ ogit.ServiceManagement:Service
 		ogit:reviewedAt
 		ogit:lastUpdatedAt
 		ogit:favorite
+		ogit:synonyms
 	);
 	ogit:indexed-attributes (
+		ogit:name
+		ogit:id
+		ogit:synonyms
 		
 	);
 	ogit:allowed (
