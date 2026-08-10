@@ -14,6 +14,7 @@
 @prefix ogit.Project:           <http://www.purl.org/ogit/Project/> .
 @prefix ogit.Factory:   <http://www.purl.org/ogit/Factory/> .
 @prefix ogit.FinancialMarket: <http://www.purl.org/ogit/FinancialMarket/> .
+@prefix ogit.FinancialAccounting:     <http://www.purl.org/ogit/FinancialAccounting/> .
 @prefix ogit.ServiceManagement: <http://www.purl.org/ogit/ServiceManagement/> .
 @prefix ogit.CustomerSupport: <http://www.purl.org/ogit/CustomerSupport/> .
 @prefix ogit.Mobile: <http://www.purl.org/ogit/Mobile/> .
@@ -220,6 +221,7 @@ ogit:Person
 			[ ogit:creates ogit.Religion:BeliefSystem ]
 			[ ogit:leads ogit.Religion:BeliefSystem ]
 			[ ogit:follows ogit.Religion:BeliefSystem ]
+			[ ogit:isResponsibleFor	ogit.FinancialAccounting:CostCenter]
 
 			# --- OSINT Security Extension additions (2026-05-02) ---
 			# Family network (NEW verbs)
