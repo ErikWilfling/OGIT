@@ -29,6 +29,8 @@ ogit.Legal:LegalClause
 		ogit:lastUpdatedAt
 		ogit:startedAt
 		ogit:endedAt
+		ogit:type
+		ogit:subtype
 		ogit:sharedWith
 		ogit:cleanContent
 		ogit:description
@@ -37,6 +39,7 @@ ogit.Legal:LegalClause
 	ogit:indexed-attributes (
 	);
 	ogit:allowed (
+			[ ogit:contains ogit.Legal:Section	]
 			[ ogit:references  ogit.Legal:LegalClause ]
 			[ ogit:references  ogit:Attachment ]
 			[ ogit:causes  ogit.ServiceManagement:Service ]
