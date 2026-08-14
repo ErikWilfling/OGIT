@@ -30,7 +30,7 @@ ogit.Legal:LegalClause
 		ogit:startedAt
 		ogit:endedAt
 		ogit:type
-		ogit:subtype
+		ogit:subType
 		ogit:sharedWith
 		ogit:cleanContent
 		ogit:description

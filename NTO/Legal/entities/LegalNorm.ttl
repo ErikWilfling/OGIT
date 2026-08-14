@@ -32,7 +32,7 @@ ogit.Legal:LegalNorm
 		ogit:startedAt
 		ogit:endedAt
 		ogit:type
-		ogit:subtype
+		ogit:subType
 		ogit:sharedWith
 		ogit:cleanContent
 		ogit:url

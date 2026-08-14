@@ -27,7 +27,7 @@ ogit.Legal:LegalSection
 		ogit:startedAt
 		ogit:endedAt
 		ogit:type
-		ogit:subtype
+		ogit:subType
 		ogit:sharedWith
 		ogit:cleanContent
 	);
