@@ -5,10 +5,10 @@
 @prefix ogit.Legal: <http://www.purl.org/ogit/Legal/> .
 
 
-ogit.Legal:LegalIntendations
+ogit.Legal:LegalIntendation
 	a rdfs:Class;
 	rdfs:subClassOf ogit:Entity;
-	rdfs:label "LegalIntendations";
+	rdfs:label "LegalIntendation";
 	dcterms:description """A distinct element within a legal code or document. Takes the form of numbers, letters or 
 	points within a Section. Intendations are the second to last structural level of a legal section.""";
 	# For ranges, see https://www.dublincore.org/specifications/dublin-core/dcmi-period/
@@ -34,6 +34,6 @@ ogit.Legal:LegalIntendations
 	ogit:indexed-attributes (
 	);
 	ogit:allowed (
-			[ ogit:contains ogit.Legal:Intendations	]
+			[ ogit:contains ogit.Legal:LegalIntendations	]
 	);
 .

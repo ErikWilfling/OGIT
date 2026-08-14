@@ -39,7 +39,7 @@ ogit.Legal:LegalClause
 	ogit:indexed-attributes (
 	);
 	ogit:allowed (
-			[ ogit:contains ogit.Legal:Section	]
+			[ ogit:contains ogit.Legal:LegalSection	]
 			[ ogit:references  ogit.Legal:LegalClause ]
 			[ ogit:references  ogit:Attachment ]
 			[ ogit:causes  ogit.ServiceManagement:Service ]
