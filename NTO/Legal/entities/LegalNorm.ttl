@@ -31,6 +31,8 @@ ogit.Legal:LegalNorm
 		ogit:url
 		ogit:startedAt
 		ogit:endedAt
+		ogit:type
+		ogit:subType
 		ogit:sharedWith
 		ogit:cleanContent
 		ogit:url
