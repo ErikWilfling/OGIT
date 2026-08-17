@@ -34,6 +34,6 @@ ogit.Legal:LegalIntendation
 	ogit:indexed-attributes (
 	);
 	ogit:allowed (
-			[ ogit:contains ogit.Legal:LegalIntendations	]
+			[ ogit:contains ogit.Legal:LegalIntendation	]
 	);
 .
