@@ -33,6 +33,7 @@
 @prefix ogit.HR.Recruiting:     <http://www.purl.org/ogit/HR/Recruiting/> .
 @prefix ogit.Auth:              <http://www.purl.org/ogit/Auth/> .
 @prefix ogit.Forum:             <http://www.purl.org/ogit/Forum/> .
+@prefix ogit.Forms:             <http://www.purl.org/ogit/Forms/> .
 
 ogit:Person
 	a rdfs:Class;
@@ -166,6 +167,8 @@ ogit:Person
 			[ ogit:owns  ogit.ServiceManagement:Service ]
 			[ ogit:owns  ogit:Event ]
 			[ ogit:owns  ogit:Vcard ]
+			[ ogit:owns  ogit.Forms:Form ]
+			[ ogit:triggers  ogit:Task ]
 			[ ogit:defines  ogit.UserMeta:Filter ]
 			[ ogit:repliedWith  ogit.Survey:Reply ]
 			[ ogit:sends  ogit:Notification ]
