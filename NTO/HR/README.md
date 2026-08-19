@@ -36,7 +36,7 @@ skills, scores).
 | `qualificationKind` | `QualificationRequirement` | `degree`, `furtherTraining`, `professionalKnowledge`, `professionalExperience`, `licence` |
 | `degreeLevel` | `QualificationRequirement` | `primary`, `lowerSecondary`, `upperSecondary`, `vocational`, `bachelor`, `master`, `diploma`, `stateExam`, `doctorate`, `other` |
 | `institutionType` | `QualificationRequirement` | `university`, `universityOfAppliedSciences`, `vocationalSchool`, `other` |
-| `fieldOfStudy`, `minimumExperience` | `QualificationRequirement` | |
+| `subjectArea`, `minimumExperience` | `QualificationRequirement` | |
 | `occupationKind` | `Occupation` | `vocationalTraining`, `furtherTraining`, `courseOfStudy` |
 | `occupationCode`, `trainingDuration` | `Occupation` | |
 | `authorityKind` | `Authority` |  `signature`, `decision`, `directive`, `committeeRepresentation` |
@@ -88,7 +88,7 @@ Organization <--belongs--  Position  <--describes--  JobDescription
   plus a subject area loses exactly what evaluation needs. Broader wording
   ("a degree in economics or similar") has no register entry and is carried by
   the descriptive attributes instead. Hence `relates -> Occupation` alongside
-  `degreeLevel` / `institutionType` / `fieldOfStudy`.
+  `degreeLevel` / `institutionType` / `subjectArea`.
 - **`relates` between two requirements means "either of these".** That is how an
   equivalent qualification held instead of the formally demanded one is
   expressed.

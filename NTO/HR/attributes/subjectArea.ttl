@@ -4,10 +4,10 @@
 @prefix rdfs:                 <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix dcterms:              <http://purl.org/dc/terms/> .
 
-ogit.HR:fieldOfStudy
+ogit.HR:subjectArea
 	a owl:DatatypeProperty;
 	rdfs:subPropertyOf ogit:Attribute;
-	rdfs:label "fieldOfStudy";
+	rdfs:label "subjectArea";
 	dcterms:description "Subject area of a required degree or training (Fachrichtung).";
 	dcterms:valid "start=2026-08-16;";
 	dcterms:creator "Almato AG";
