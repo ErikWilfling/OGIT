@@ -8,9 +8,9 @@ ogit.HR:degreeLevel
 	a owl:DatatypeProperty;
 	rdfs:subPropertyOf ogit:Attribute;
 	rdfs:label "degreeLevel";
-	dcterms:description "Level of the educational degree a position requires.";
+	dcterms:description "Level of the educational degree a position requires, from primary school up to a doctorate.";
 	ogit:validation-type "fixed";
-	ogit:validation-parameter "vocational,bachelor,master,diploma,stateExam,doctorate,other";
+	ogit:validation-parameter "primary,lowerSecondary,upperSecondary,vocational,bachelor,master,diploma,stateExam,doctorate,other";
 	dcterms:valid "start=2026-08-16;";
 	dcterms:creator "Almato AG";
 .

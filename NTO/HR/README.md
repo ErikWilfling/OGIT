@@ -34,7 +34,7 @@ skills, scores).
 | `timeShare` | `WorkUnit` | |
 | `characteristicCode` | `WorkUnit` | |
 | `qualificationKind` | `QualificationRequirement` | `degree`, `furtherTraining`, `professionalKnowledge`, `professionalExperience`, `licence` |
-| `degreeLevel` | `QualificationRequirement` | `vocational`, `bachelor`, `master`, `diploma`, `stateExam`, `doctorate`, `other` |
+| `degreeLevel` | `QualificationRequirement` | `primary`, `lowerSecondary`, `upperSecondary`, `vocational`, `bachelor`, `master`, `diploma`, `stateExam`, `doctorate`, `other` |
 | `institutionType` | `QualificationRequirement` | `university`, `universityOfAppliedSciences`, `vocationalSchool`, `other` |
 | `fieldOfStudy`, `minimumExperience` | `QualificationRequirement` | |
 | `occupationKind` | `Occupation` | `vocationalTraining`, `furtherTraining`, `courseOfStudy` |
