@@ -21,7 +21,7 @@ skills, scores).
 | `WorkUnit` | A body of work leading to one delimitable result, carrying a share of working time. |
 | `QualificationRequirement` | A qualification the post requires -- degree, further training, knowledge, experience, licence. |
 | `Occupation` | A recognised register entry: vocational training occupation, further-training occupation, or course of study. |
-| `Authority` | A power delegated to the post holder. |
+| `Authority` | A power delegated to the post holder.  -- signature, decision, directive, committee. |
 | `Subordination` | A group of staff reporting directly to the post, with kind, headcount and grade. |
 | `Grading` | The evaluation result: assigned grade, reasoning, evidence. |
 
@@ -39,7 +39,7 @@ skills, scores).
 | `fieldOfStudy`, `minimumExperience` | `QualificationRequirement` | |
 | `occupationKind` | `Occupation` | `vocationalTraining`, `furtherTraining`, `courseOfStudy` |
 | `occupationCode`, `trainingDuration` | `Occupation` | |
-| `authorityKind` | `Authority` | |
+| `authorityKind` | `Authority` |  `signature`, `decision`, `directive`, `committeeRepresentation` |
 | `authorityScope` | `Authority` | `internal`, `external` |
 | `signatureLevel` | `Authority` | `byOrder`, `perProcuration` |
 | `authorityLimit` | `Authority` | |

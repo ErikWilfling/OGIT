@@ -9,6 +9,8 @@ ogit.HR:authorityKind
 	rdfs:subPropertyOf ogit:Attribute;
 	rdfs:label "authorityKind";
 	dcterms:description "Kind of authority delegated to the holder of a position. Unrelated to the similarly named attribute in the Integration namespace, which denotes data provenance.";
+	ogit:validation-type "fixed";
+	ogit:validation-parameter "signature,decision,directive,committeeRepresentation";
 	dcterms:valid "start=2026-08-16;";
 	dcterms:creator "Almato AG";
 .
