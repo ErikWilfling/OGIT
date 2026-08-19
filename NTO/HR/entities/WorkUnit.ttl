@@ -32,6 +32,5 @@ ogit.HR:WorkUnit
 	);
 	ogit:allowed (
 		[ ogit.ClassificationStandard:classifiedUnder  ogit.ClassificationStandard:ClassificationStandardTreeBranch ]
-		[ ogit:contains  ogit.HR:WorkUnit ]
 	);
 .

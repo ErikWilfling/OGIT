@@ -53,7 +53,7 @@ skills, scores).
 ```
 Organization <--belongs--  Position  <--describes--  JobDescription
                               |                            |
-                         assignedTo                        +-- contains --> WorkUnit --contains--> WorkUnit
+                         assignedTo                        +-- contains
                               v                            +-- requires --> QualificationRequirement
                         RoleAssignment                     +-- defines  --> Authority
                                                            +-- has      --> Subordination
@@ -104,7 +104,5 @@ Organization <--belongs--  Position  <--describes--  JobDescription
 - **`timeShare` is what makes proportion rules computable** -- grading schemes
   commonly turn on the share of working time a characteristic accounts for.
   It sits on `WorkUnit` for that reason.
-- **`WorkUnit contains WorkUnit`** allows a work unit to be broken into
-  sub-units where a source system records them that way.
 - Generic attributes (`ogit:name`, `description`, `content`, `status`,
   `validFrom`, `validTo`, `confidence`) are reused rather than redefined.
