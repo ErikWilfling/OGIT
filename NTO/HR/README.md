@@ -21,7 +21,7 @@ skills, scores).
 | `WorkUnit` | A body of work leading to one delimitable result, carrying a share of working time. |
 | `QualificationRequirement` | A qualification the post requires -- degree, further training, knowledge, experience, licence. |
 | `Occupation` | A recognised register entry: vocational training occupation, further-training occupation, or course of study. |
-| `Authority` | A power delegated to the post holder -- signature, decision, directive, committee. |
+| `Authority` | A power delegated to the post holder.  -- signature, decision, directive, committee. |
 | `Subordination` | A group of staff reporting directly to the post, with kind, headcount and grade. |
 | `Grading` | The evaluation result: assigned grade, reasoning, evidence. |
 
@@ -34,12 +34,12 @@ skills, scores).
 | `timeShare` | `WorkUnit` | |
 | `characteristicCode` | `WorkUnit` | |
 | `qualificationKind` | `QualificationRequirement` | `degree`, `furtherTraining`, `professionalKnowledge`, `professionalExperience`, `licence` |
-| `degreeLevel` | `QualificationRequirement` | `vocational`, `bachelor`, `master`, `diploma`, `stateExam`, `doctorate`, `other` |
+| `degreeLevel` | `QualificationRequirement` | `primary`, `lowerSecondary`, `upperSecondary`, `vocational`, `bachelor`, `master`, `diploma`, `stateExam`, `doctorate`, `other` |
 | `institutionType` | `QualificationRequirement` | `university`, `universityOfAppliedSciences`, `vocationalSchool`, `other` |
-| `fieldOfStudy`, `minimumExperience` | `QualificationRequirement` | |
+| `subjectArea`, `minimumExperience` | `QualificationRequirement` | |
 | `occupationKind` | `Occupation` | `vocationalTraining`, `furtherTraining`, `courseOfStudy` |
 | `occupationCode`, `trainingDuration` | `Occupation` | |
-| `authorityKind` | `Authority` | `signature`, `decision`, `directive`, `committeeRepresentation` |
+| `authorityKind` | `Authority` |  `signature`, `decision`, `directive`, `committeeRepresentation` |
 | `authorityScope` | `Authority` | `internal`, `external` |
 | `signatureLevel` | `Authority` | `byOrder`, `perProcuration` |
 | `authorityLimit` | `Authority` | |
@@ -53,7 +53,7 @@ skills, scores).
 ```
 Organization <--belongs--  Position  <--describes--  JobDescription
                               |                            |
-                         assignedTo                        +-- contains --> WorkUnit --contains--> WorkUnit
+                         assignedTo                        +-- contains
                               v                            +-- requires --> QualificationRequirement
                         RoleAssignment                     +-- defines  --> Authority
                                                            +-- has      --> Subordination
@@ -88,7 +88,7 @@ Organization <--belongs--  Position  <--describes--  JobDescription
   plus a subject area loses exactly what evaluation needs. Broader wording
   ("a degree in economics or similar") has no register entry and is carried by
   the descriptive attributes instead. Hence `relates -> Occupation` alongside
-  `degreeLevel` / `institutionType` / `fieldOfStudy`.
+  `degreeLevel` / `institutionType` / `subjectArea`.
 - **`relates` between two requirements means "either of these".** That is how an
   equivalent qualification held instead of the formally demanded one is
   expressed.
@@ -104,7 +104,5 @@ Organization <--belongs--  Position  <--describes--  JobDescription
 - **`timeShare` is what makes proportion rules computable** -- grading schemes
   commonly turn on the share of working time a characteristic accounts for.
   It sits on `WorkUnit` for that reason.
-- **`WorkUnit contains WorkUnit`** allows a work unit to be broken into
-  sub-units where a source system records them that way.
 - Generic attributes (`ogit:name`, `description`, `content`, `status`,
   `validFrom`, `validTo`, `confidence`) are reused rather than redefined.
