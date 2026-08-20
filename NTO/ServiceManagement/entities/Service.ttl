@@ -17,6 +17,7 @@
 @prefix rdfs:                   <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix dcterms:                <http://purl.org/dc/terms/> .
 @prefix ogit.ServiceManagement: <http://www.purl.org/ogit/ServiceManagement/> .
+@prefix ogit.ClassificationStandard:              <http://www.purl.org/ogit/ClassificationStandard/> .
 
 ogit.ServiceManagement:Service
 	a rdfs:Class;
@@ -74,5 +75,6 @@ ogit.ServiceManagement:Service
 			[ ogit:has  ogit:Requirements ]
 			[ ogit:describes  ogit.ServiceManagement:Service ]
 			[ ogit:references  ogit:Catalog ]
+			[ ogit:consistsOf  ogit.ClassificationStandard:ClassificationStandardTreeBranch ]
 	);
 .
