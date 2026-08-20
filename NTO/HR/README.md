@@ -21,7 +21,7 @@ skills, scores).
 | `WorkUnit` | A body of work leading to one delimitable result, carrying a share of working time. |
 | `QualificationRequirement` | A qualification the post requires -- degree, further training, knowledge, experience, licence. |
 | `Occupation` | A recognised register entry: vocational training occupation, further-training occupation, or course of study. |
-| `Authority` | A power delegated to the post holder.  -- signature, decision, directive, committee. |
+| `Authority` | A power delegated to the post holder -- signature, decision, directive, committee. |
 | `Subordination` | A group of staff reporting directly to the post, with kind, headcount and grade. |
 | `Grading` | The evaluation result: assigned grade, reasoning, evidence. |
 
@@ -29,7 +29,7 @@ skills, scores).
 
 | Attribute | On | Fixed values |
 |---|---|---|
-| `positionNumber` | `Position`, `JobDescription` | |
+| `postNumber` | `Position`, `JobDescription` | |
 | `employmentFraction` | `Position` | |
 | `timeShare` | `WorkUnit` | |
 | `characteristicCode` | `WorkUnit` | |
@@ -39,7 +39,7 @@ skills, scores).
 | `subjectArea`, `minimumExperience` | `QualificationRequirement` | |
 | `occupationKind` | `Occupation` | `vocationalTraining`, `furtherTraining`, `courseOfStudy` |
 | `occupationCode`, `trainingDuration` | `Occupation` | |
-| `authorityKind` | `Authority` |  `signature`, `decision`, `directive`, `committeeRepresentation` |
+| `authorityKind` | `Authority` | `signature`, `decision`, `directive`, `committeeRepresentation` |
 | `authorityScope` | `Authority` | `internal`, `external` |
 | `signatureLevel` | `Authority` | `byOrder`, `perProcuration` |
 | `authorityLimit` | `Authority` | |
@@ -53,7 +53,7 @@ skills, scores).
 ```
 Organization <--belongs--  Position  <--describes--  JobDescription
                               |                            |
-                         assignedTo                        +-- contains
+                         assignedTo                        +-- contains --> WorkUnit
                               v                            +-- requires --> QualificationRequirement
                         RoleAssignment                     +-- defines  --> Authority
                                                            +-- has      --> Subordination
@@ -104,5 +104,11 @@ Organization <--belongs--  Position  <--describes--  JobDescription
 - **`timeShare` is what makes proportion rules computable** -- grading schemes
   commonly turn on the share of working time a characteristic accounts for.
   It sits on `WorkUnit` for that reason.
-- Generic attributes (`ogit:name`, `description`, `content`, `status`,
+- **`WorkUnit` is flat; sub-items live in `ogit:subItems`.** A work unit does not
+  contain work units. The Arbeitsvorgang is the unit of evaluation and carries
+  the time share, so its numbered sub-items are held as a list on it rather than
+  promoted to siblings, which would invent shares the source does not state.
+- **`postNumber`, not `positionNumber`.** `ogit:positionNumber` already exists
+  and means an ordinal. See `DESIGN_NOTES.md` section 3.7.
+- Generic attributes (`ogit:name`, `description`, `content`, `subItems`, `status`,
   `validFrom`, `validTo`, `confidence`) are reused rather than redefined.

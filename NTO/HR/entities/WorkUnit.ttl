@@ -25,10 +25,12 @@ ogit.HR:WorkUnit
 		ogit.HR:timeShare
 		ogit.HR:characteristicCode
 		ogit:description
+		ogit:subItems
 	);
 	ogit:indexed-attributes (
 		ogit:name
 		ogit:description
+		ogit:subItems
 	);
 	ogit:allowed (
 		[ ogit.ClassificationStandard:classifiedUnder  ogit.ClassificationStandard:ClassificationStandardTreeBranch ]
