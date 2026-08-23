@@ -25,7 +25,8 @@ ogit.ClassificationStandard:ClassificationStandardTreeRoot
         ogit:author
 	);
 	ogit:indexed-attributes (
-		
+		ogit:name
+		ogit.ClassificationStandard:fullName
 	);
 	ogit:allowed (
 	);

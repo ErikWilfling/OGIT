@@ -25,7 +25,9 @@ ogit.ClassificationStandard:ClassificationStandardTreeBranch
 		ogit.Utilities:sourcePublication
 	);
 	ogit:indexed-attributes (
-		
+		ogit:name
+		ogit.ClassificationStandard:categoryIdentifier
+		ogit:description
 	);
 	ogit:allowed (
 			[ ogit.ClassificationStandard:childNodeOf  ogit.ClassificationStandard:ClassificationStandardTreeRoot ]
