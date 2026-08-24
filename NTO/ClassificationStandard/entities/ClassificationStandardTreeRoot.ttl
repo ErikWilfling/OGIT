@@ -28,7 +28,8 @@ ogit.ClassificationStandard:ClassificationStandardTreeRoot
 		ogit:modificationTime
 	);
 	ogit:indexed-attributes (
-		
+		ogit:name
+		ogit.ClassificationStandard:fullName
 	);
 	ogit:allowed (
 	);
