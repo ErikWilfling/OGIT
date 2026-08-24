@@ -45,16 +45,16 @@ skills, scores).
 | `authorityLimit` | `Authority` | |
 | `subordinationKind` | `Subordination` | `functional`, `disciplinary`, `functionalAndDisciplinary` |
 | `headcountFte` | `Subordination` | |
-| `assignedGrade`, `rationale` | `Grading` | |
+| `assignedGrade` | `Grading` | |
 | `securingMode` | `Grading` | `derivable`, `statistical` |
 
 ### Shape
 
 ```
 Organization <--belongs--  Position  <--describes--  JobDescription
-                              |                            |
+                              ^                            |
                          assignedTo                        +-- contains --> WorkUnit
-                              v                            +-- requires --> QualificationRequirement
+                              |                            +-- requires --> QualificationRequirement
                         RoleAssignment                     +-- defines  --> Authority
                                                            +-- has      --> Subordination
                                                            +-- has      --> Grading
@@ -63,15 +63,19 @@ Organization <--belongs--  Position  <--describes--  JobDescription
 
   QualificationRequirement -- relates --> Occupation        (names a register entry)
                            -- relates --> QualificationRequirement   (alternative / equivalent)
+                           -- relates --> Recruiting:Skill           (candidate-side match)
+                           -- relates --> Recruiting:Education
+
+  Subordination -- relates --> Position       (the posts making up the group)
 
   WorkUnit, QualificationRequirement, Occupation, Authority, Subordination, Grading
         --classifiedUnder--> ClassificationStandardTreeBranch
                                         ^
                                         | classifiedUnder (already in OGIT)
                              Legal:LegalClause <--contains-- Legal:LegalNorm
-                                        ^
-                                        | references
-                             Grading, Occupation
+                                        ^                             ^
+                                        | references                  | references
+                                     Grading                    Grading, Occupation
 ```
 
 ### Design notes
@@ -82,6 +86,13 @@ Organization <--belongs--  Position  <--describes--  JobDescription
   `ClassificationStandard:classifiedUnder`. Verb restrictions in OGIT are
   source-side, so each entity that points at a tree branch declares the
   `classifiedUnder` pairing itself.
+- **The holder relation is declared on `RoleAssignment`, not on `Position`.**
+  `ogit:RoleAssignment` is the assigned thing and already declares
+  `assignedTo -> Person / Role / Organization / ServiceManagement:Service`;
+  `assignedTo -> HR:Position` joins that list there. Because verb restrictions
+  are source-side, declaring it on `Position` would have meant
+  `Position -assignedTo-> RoleAssignment`, which reverses the direction the rest
+  of OGIT uses.
 - **A qualification requirement can be stated two ways, and both are kept.**
   Naming a recognised occupation is a *reference* to a register entry that has
   its own curriculum, legal basis and duration -- collapsing it into a level
@@ -104,11 +115,15 @@ Organization <--belongs--  Position  <--describes--  JobDescription
 - **`timeShare` is what makes proportion rules computable** -- grading schemes
   commonly turn on the share of working time a characteristic accounts for.
   It sits on `WorkUnit` for that reason.
-- **`WorkUnit` is flat; sub-items live in `ogit:subItems`.** A work unit does not
+- **`WorkUnit` is flat; sub-items live in `ogit:values`.** A work unit does not
   contain work units. The Arbeitsvorgang is the unit of evaluation and carries
   the time share, so its numbered sub-items are held as a list on it rather than
   promoted to siblings, which would invent shares the source does not state.
 - **`postNumber`, not `positionNumber`.** `ogit:positionNumber` already exists
-  and means an ordinal. See `DESIGN_NOTES.md` section 3.7.
-- Generic attributes (`ogit:name`, `description`, `content`, `subItems`, `status`,
-  `validFrom`, `validTo`, `confidence`) are reused rather than redefined.
+  in `SGO/sgo/attributes/` and means an ordinal -- "an integer, which displays a
+  position of numbering" -- so it cannot carry an establishment-plan post
+  identifier.
+- Generic attributes (`ogit:name`, `description`, `content`, `values`, `reason`,
+  `status`, `validFrom`, `validTo`, `confidence`) are reused rather than
+  redefined. In particular `Grading` carries its justification in `ogit:reason`
+  ("the reason for a decision"), as `ServiceManagement:ApprovalTask` does.

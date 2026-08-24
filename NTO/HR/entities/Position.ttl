@@ -34,6 +34,5 @@ ogit.HR:Position
 	);
 	ogit:allowed (
 		[ ogit:belongs     ogit:Organization ]
-		[ ogit:assignedTo  ogit:RoleAssignment ]
 	);
 .

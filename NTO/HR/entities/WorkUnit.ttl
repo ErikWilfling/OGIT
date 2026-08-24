@@ -13,7 +13,10 @@ ogit.HR:WorkUnit
 	the lower-valued activities inseparably connected to it. The work unit, not
 	the individual activity and not the descriptive text, is the unit that carries
 	a classification characteristic and a share of working time -- which is what
-	makes proportion-based grading rules computable.""";
+	makes proportion-based grading rules computable. The numbered sub-items the
+	unit comprises are carried in ogit:values, one entry per line; they are read
+	as a whole and carry no time share, characteristic or classification of their
+	own, which is why they are not separate vertices.""";
 	dcterms:valid "start=2026-08-16;";
 	dcterms:creator "Almato AG";
 	ogit:scope "NTO";
@@ -25,12 +28,12 @@ ogit.HR:WorkUnit
 		ogit.HR:timeShare
 		ogit.HR:characteristicCode
 		ogit:description
-		ogit:subItems
+		ogit:values
 	);
 	ogit:indexed-attributes (
 		ogit:name
 		ogit:description
-		ogit:subItems
+		ogit:values
 	);
 	ogit:allowed (
 		[ ogit.ClassificationStandard:classifiedUnder  ogit.ClassificationStandard:ClassificationStandardTreeBranch ]
