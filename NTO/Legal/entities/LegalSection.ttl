@@ -35,5 +35,7 @@ ogit.Legal:LegalSection
 	);
 	ogit:allowed (
 			[ ogit:contains ogit.Legal:LegalIntendation	]
+			[ ogit:causes  ogit.ServiceManagement:Service ]
+
 	);
 .
